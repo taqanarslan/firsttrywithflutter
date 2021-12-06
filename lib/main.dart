@@ -12,8 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Atakan',
       theme: ThemeData(
-        primaryColor: Colors.amber[300],
-        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red,primary: Colors.amber[300]),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -42,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(widget.title),
       ),
@@ -67,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        foregroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Theme.of(context).colorScheme.primary,
         child: const Icon(Icons.add),
       ),
     );
